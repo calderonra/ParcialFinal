@@ -56,3 +56,5 @@ postController.delete=function (req,res) {
         }
     })
 }
+
+module.exports=postController;
