@@ -4,4 +4,24 @@ block content
   h1= title
   p Welcome to #{title}
 
-  
+  p Administrador de colores 
+
+  .errors
+
+  form(action="/api/color", method="POST",name="colorForm" )
+    label(for="name")
+    input#nombre( type="text" class="form-control")
+    label(for="tipo" )
+    input#hexa(type="text" class="form-control")
+    input(type="button", value="Enviar")
+
+
+  table
+    thead
+      th id
+      th nombre
+      th hexa
+      th bit
+
+    tbody .colors
+  script(src="/javascripts/main.js")

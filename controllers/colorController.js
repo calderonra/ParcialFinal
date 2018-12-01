@@ -1,18 +1,17 @@
 const mongoose = require('mongoose');
-postModel = require('../models/post');
+colorModel = require('../models/color');
 
-postController = {};
+colorController = {};
 
-postController.create = function (req, res) {
+colorController.create = function (req, res) {
     let data = {
-        marca=req.body.marca,
-        modelo=req.body.modelo,
-        anno=req.body.anno
-    }
+        nombre: req.body.nombre,
+        hexa: req.body.hexa,
+    };
 
-    if (data.marca && data.modelo && data.anno) {
-        let postNuevo = new postModel(data);
-        postNuevo.save(function (err, guardado) {
+    if (data.nombre && data.hexa) {
+        let colorNuevo = new colorModel(data);
+        colorNuevo.save(function (err, guardado) {
             if (err) {
                 res.status(500);
                 res.json({ code: 500, err });
@@ -23,8 +22,8 @@ postController.create = function (req, res) {
     }
 }
 
-postController.getAll = function (req, res) {
-    postModel.find({}, function (err, post) {
+colorController.getAll = function (req, res) {
+    colorModel.find({}, function (err, color) {
         if (err) {
             res.status(500);
             res.json({ code: 500, err });
@@ -35,8 +34,8 @@ postController.getAll = function (req, res) {
 
 }
 
-postController.getByid=function (req,res) {
-    postModel.findByOne({_id:req.params.id}, function (err, post) {
+colorController.getByid=function (req,res) {
+    colorModel.findByOne({_id:req.params.id}, function (err, color) {
         if (err) {
             res.status(500);
             res.json({ code: 500, err });
@@ -46,8 +45,8 @@ postController.getByid=function (req,res) {
     });
 }
 
-postController.delete=function (req,res) {
-    postModel.findOneAndRemove({_id:req.params.id},function (err,eliminado) {
+colorController.delete=function (req,res) {
+    colorModel.findOneAndRemove({_id:req.params.id},function (err,eliminado) {
         if (err) {
             res.status(500);
             res.json({ code: 500, err });
@@ -57,4 +56,4 @@ postController.delete=function (req,res) {
     })
 }
 
-module.exports=postController;
+module.exports=colorController;
