@@ -7,4 +7,4 @@ var colorSchema = new mongoose.Schema({
 
   });
 
-  module.exports=colorSchema;
+  module.exports=mongoose.model('Color',colorSchema);

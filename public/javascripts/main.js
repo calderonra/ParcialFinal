@@ -25,7 +25,7 @@ let app = {
         tr.getElementsByClassName("delete")[0].addEventListener("click", (event) => {
             this.deletePost(event, data, tr, tbody);
         })
-    },
+    }, 
 
     deletePost: function () {
 

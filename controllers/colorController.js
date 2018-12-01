@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
-colorModel = require('../models/color');
+const colorModel = require('../models/color');
 
 const colorController = {};
 
 colorController.create = function (req, res) {
     let data = {
         nombre: req.body.nombre,
-        hexa: req.body.hexa,
+        hexa: req.body.hexa
     };
 
     if (data.nombre && data.hexa ) {
