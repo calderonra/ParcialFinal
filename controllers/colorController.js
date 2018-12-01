@@ -19,6 +19,9 @@ colorController.create = function (req, res) {
                 res.json({ ok: true });
             }
         });
+    }else {
+        res.status(400);
+        res.json({err:{code: 400,message:"faltan datos"}});
     }
 }
 

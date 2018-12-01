@@ -1,13 +1,13 @@
-var postController=require('../controllers/colorController');
+var colorController=require('../controllers/colorController');
 var express = require('express');
 var router = express.Router();
 
 
-router.post('/',postController.create);
-router.get('/',postController.getAll);
+router.post('/',colorController.create);
+router.get('/',colorController.getAll);
 
-router.get('/:id',postController.getByid);
+router.get('/:id',colorController.getByid);
 
-router.delete('/:id',postController.delete);
+router.delete('/:id',colorController.delete);
 
 module.exports=router;
