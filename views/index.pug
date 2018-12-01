@@ -9,9 +9,9 @@ block content
   .errors
 
   form(action="/api/color", method="POST",name="colorForm" )
-    label(for="name")
+    label(for="name") Name
     input#nombre( type="text" class="form-control")
-    label(for="tipo" )
+    label(for="tipo" ) Hexa
     input#hexa(type="text" class="form-control")
     input(type="button", value="Enviar")
 
@@ -23,5 +23,5 @@ block content
       th hexa
       th bit
 
-    tbody .colors
+    tbody.colors
   script(src="/javascripts/main.js")
