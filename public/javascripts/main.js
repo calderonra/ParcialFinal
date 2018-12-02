@@ -10,6 +10,7 @@ let app = {
     addEvents: function () {
         document.addEventListener("Submit", (event) => {
             this.SubmitPost(event, this.addRow);
+            console.log("ola k ase");
         });
     },
     addRow: function (data) {
